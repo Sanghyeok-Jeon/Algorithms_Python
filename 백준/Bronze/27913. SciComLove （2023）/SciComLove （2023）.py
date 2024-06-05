@@ -1,19 +1,26 @@
+import sys
+input = sys.stdin.readline
+
 N, Q = map(int, input().split())
+
+# "SciComLove"의 대문자 위치
 origin_str = 'SciComLove'
-n_str = list('SciComLove' + 'SciComLove' * (N // 10))[:N]
+origin_upper = [os.isupper() for os in origin_str]
+origin_length = len(origin_str)
 
-cnt_upper = 0
-for s in n_str:
-    if s.isupper():
-        cnt_upper += 1
+# N 길이의 문자열에 대한 대문자 여부 배열
+is_upper = [origin_upper[i % origin_length] for i in range(N)]
 
+# 초기 대문자 개수 계산
+current_upper_cnt = sum(is_upper)
+
+# 처리
 for _ in range(Q):
-    i = int(input()) - 1
-    if n_str[i].isupper():
-        n_str[i] = n_str[i].lower()
-        cnt_upper -= 1
+    idx = int(input()) - 1
+    if is_upper[idx]:
+        current_upper_cnt -= 1
     else:
-        n_str[i] = n_str[i].upper()
-        cnt_upper += 1
+        current_upper_cnt += 1
 
-    print(cnt_upper)
+    is_upper[idx] = not is_upper[idx]
+    print(current_upper_cnt)
