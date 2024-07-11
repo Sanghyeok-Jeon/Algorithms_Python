@@ -1,16 +1,19 @@
 S = input()
 
-set_k = set()
-set_y = set()
+K = 'KOREA'
+Y = 'YONSEI'
+idx_k, idx_y = 0, 0
 for i in range(len(S)):
-    if S[i] in 'KOREA':
-        set_k.add(S[i])
-        if len(set_k) == 5:
-            print('KOREA')
-            exit()
+    if idx_k == len(K):
+        print('KOREA')
+        break
 
-    if S[i] in 'YONSEI':
-        set_y.add(S[i])
-        if len(set_y) == 6:
-            print('YONSEI')
-            exit()
+    if idx_y == len(Y):
+        print('YONSEI')
+        break
+
+    if S[i] == K[idx_k]:
+        idx_k += 1
+
+    if S[i] == Y[idx_y]:
+        idx_y += 1
