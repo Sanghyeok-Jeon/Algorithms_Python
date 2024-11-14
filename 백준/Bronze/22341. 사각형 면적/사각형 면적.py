@@ -7,7 +7,7 @@ for _ in range(C):
     if X >= r or Y >= c:
         continue
 
-    if r * Y >= X * c:
+    if r * Y > X * c:
         c = Y
     else:
         r = X
