@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 N = int(input())
 paper = [[0] * 1001 for _ in range(1001)]
 
