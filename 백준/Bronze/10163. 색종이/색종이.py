@@ -1,5 +1,5 @@
 N = int(input())
-paper = [[0] * 101 for _ in range(101)]
+paper = [[0] * 1001 for _ in range(1001)]
 
 for num in range(1, N + 1):
     x, y, w, h = map(int, input().split())
