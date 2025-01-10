@@ -5,6 +5,9 @@ problems.sort(key=lambda x:(x[1], x[0]))
 score = 0
 solved = 0
 for i in range(N):
+    if solved == K:
+        break
+        
     sub1, sub2 = problems[i]
 
     if sub1 <= L:
@@ -13,8 +16,5 @@ for i in range(N):
             score += 40
 
         solved += 1
-
-    if solved == K:
-        break
 
 print(score)
