@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 di = [-1, -1, 0, 1, 1, 1, 0, -1]
 dj = [0, 1, 1, 1, 0, -1, -1, -1]
 
