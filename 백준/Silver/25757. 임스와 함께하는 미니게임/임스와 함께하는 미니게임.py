@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 N, game = input().split()
 
 player = set()
