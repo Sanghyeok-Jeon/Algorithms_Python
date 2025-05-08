@@ -1,21 +1,19 @@
-import sys
-input = sys.stdin.readline
-
 N = int(input())
 
-number = list(range(1, N + 1))
-answer = 0
-left = 0
-right = 0
-while right <= N:
-    tmp_sum = sum(number[left:right + 1])
-    if tmp_sum == N:
-        answer += 1
-        left += 1
-        right += 1
-    elif tmp_sum > N and left < right:
-        left += 1
-    else:
-        right += 1
+start, end = 1, 1
+current_sum = 1
+count = 0
 
-print(answer)
+while start <= N:
+    if current_sum < N:
+        end += 1
+        current_sum += end
+    elif current_sum > N:
+        current_sum -= start
+        start += 1
+    else:
+        count += 1
+        end += 1
+        current_sum += end
+
+print(count)
