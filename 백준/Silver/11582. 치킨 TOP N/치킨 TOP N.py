@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 N = int(input())
 score_taste = list(map(int, input().split()))
 k = int(input())
