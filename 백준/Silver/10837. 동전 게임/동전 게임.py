@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 K = int(input())
 C = int(input())
 for i in range(C):
